@@ -77,7 +77,7 @@ void setup() {
   digitalWrite(PIN_LED, LOW);
 
   pinMode(PIN_WIFI_LED, OUTPUT);
-  digitalWrite(PIN_WIFI_LED, HIGH);
+  digitalWrite(PIN_WIFI_LED, LOW);
   
   pinMode(PIN_BUZZER, OUTPUT);
   digitalWrite(PIN_BUZZER, LOW);
@@ -124,7 +124,7 @@ void setup() {
     Serial.print("IP: ");
     myIP=WiFi.localIP();
     Serial.println(myIP);
-    digitalWrite(PIN_WIFI_LED, LOW);    // Wifi LED on when connected to Wifi as STA mode
+    digitalWrite(PIN_WIFI_LED, HIGH);    // Wifi LED on when connected to Wifi as STA mode
     delay(2000);
   } else {
     WiFi.mode(WIFI_AP);
@@ -136,7 +136,7 @@ void setup() {
     Serial.println("*WiFi-AP-Mode*");
     Serial.print("AP IP address: ");
     Serial.println(myIP);
-    digitalWrite(PIN_WIFI_LED, HIGH);   // Wifi LED off when status as AP mode
+    digitalWrite(PIN_WIFI_LED, LOW);   // Wifi LED off when status as AP mode
     delay(2000);
   }
 
